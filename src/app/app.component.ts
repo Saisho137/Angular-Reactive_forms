@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,22 +7,27 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  public generalInfoForm: FormGroup = new FormGroup({
+    name: new FormControl('', [Validators.required]),
+    lastName: new FormControl('', [Validators.required]),
+    age: new FormControl('', [Validators.required]),
+    dni: new FormControl('', [Validators.required]),
+  });
   public formList: FormGroup[] = [];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit():void {
     this.addRowForm();
   }
 
   addRowForm():void {
-    const newForm = this.fb.group({
-      producto: ['', Validators.required],
-      tarifa: ['', Validators.required],
-      moneda: ['', Validators.required],
-      itemTrabajo: ['', Validators.required],
-      fechaInicio: ['', Validators.required],
-      fechaFin: ['', Validators.required]
+    const newForm = this.formBuilder.group({
+      product: ['', Validators.required],
+      price: ['', Validators.required],
+      currency: ['', Validators.required],
+      amount: ['', Validators.required],
+      purchaseDate: ['', Validators.required],
     });
     this.formList.push(newForm);
   }
