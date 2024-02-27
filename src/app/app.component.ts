@@ -38,6 +38,9 @@ export class AppComponent {
   }
 
   submit(): void {
-    console.log('here');
+    console.log(this.generalInfoForm.value);
+    this.formList.forEach(form => {
+      console.log(form.value);
+    });
   }
 }

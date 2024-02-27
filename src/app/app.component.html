@@ -51,5 +51,24 @@
       </tbody>
     </table>
     <button class="button__generate" (click)="submit()">Generate info</button>
+    <h2>General Form Values</h2>
+    <section class="print__generalForm" *ngIf="generalInfoForm">
+      <div *ngIf="generalInfoForm.get('name')?.value">
+        <h3>Name:</h3>
+        <p>{{generalInfoForm.get('name')?.value}}</p>
+      </div>
+      <div *ngIf="generalInfoForm.get('lastName')?.value">
+        <h3>Last Name:</h3>
+        <p>{{generalInfoForm.get('lastName')?.value}}</p>
+      </div>
+      <div *ngIf="generalInfoForm.get('dni')?.value">
+        <h3>DNI:</h3>
+        <p>{{generalInfoForm.get('dni')?.value}}</p>
+      </div>
+      <div *ngIf="generalInfoForm.get('age')?.value">
+        <h3>Age:</h3>
+        <p>{{generalInfoForm.get('age')?.value}}</p>
+      </div>
+    </section>
   </section>
 </section>
