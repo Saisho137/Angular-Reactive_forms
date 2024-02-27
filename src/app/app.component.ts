@@ -15,12 +15,10 @@ export class AppComponent {
   });
   public formList: FormGroup[] = [];
 
-  constructor(private formBuilder: FormBuilder) {
-    this.addRowForm();
-
-  }
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit():void {
+    this.addRowForm();
   }
 
   addRowForm():void {

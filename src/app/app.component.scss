@@ -1,7 +1,20 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-width: max-content;
+    min-height: 97vh;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 .header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-top: 20px;
     margin-bottom: 30px;
     &__logo {
         display: flex;
@@ -13,7 +26,6 @@
             margin: 0 15px
         }
     }
-
     &__nav {
         &-list {
             display: flex;
@@ -26,34 +38,29 @@
 
 .general-info {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    margin-top: 20px;
+    grid-template-columns: 0.65fr 1fr 0.65fr 1fr;
     align-items: center;
-    background-color: #dfdfff;
     color: #461b93;
     font-weight: bold;
-    width: 80vw;
+    margin-top: 10px;
+    padding-right: 2%;
     height: 15vh;
     border-radius: 20px;
+    background-color: #dfdfff;
 
-    &__title {
-        display: inline;
-        background-color: #dfdfff;
-        color: #461b93;
-        border-radius: 20px;
-        font-size: large;
-        font-weight: bold;
-        margin-left: 5px;
-        padding: 10px;
-    }
     &__label {
-        display: grid;
+        display: flex;
         justify-content: center;
-        margin-right: 5px;
+        align-items: center;
     }
     &__input {
-        display: grid;
-        justify-content: start;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
     }
+}
+
+.table {
+    margin-top: 20px;
 }

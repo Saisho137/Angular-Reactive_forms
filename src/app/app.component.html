@@ -13,39 +13,42 @@
     </nav>
   </header>
 
-  <h2>General Form</h2>
-  <section class="general-info" [formGroup]="generalInfoForm">
-    <label class="general-info__label">Name:</label>
-    <input type="text" formControlName="name">
-    <label class="general-info__label">Last Name:</label>
-    <input type="text" formControlName="lastName">
-    <label class="general-info__label">DNI:</label>
-    <input type="text" formControlName="dni">
-    <label class="general-info__label">Age:</label>
-    <input type="text" formControlName="age">
+  <section class="content">
+    <h2>General Form</h2>
+    <section class="general-info" [formGroup]="generalInfoForm">
+      <label class="general-info__label">Name:</label>
+      <input type="text" formControlName="name">
+      <label class="general-info__label">Last Name:</label>
+      <input type="text" formControlName="lastName">
+      <label class="general-info__label">DNI:</label>
+      <input type="text" formControlName="dni">
+      <label class="general-info__label">Age:</label>
+      <input type="text" formControlName="age">
+    </section>
+
+    <h3>Dinamic Form</h3>
+    <table class="table">
+      <caption></caption>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Currency</th>
+          <th>Amount</th>
+          <th>Purchase Date</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let form of formList; let index = index" [formGroup]="form">
+        <tr>
+          <td><input type="text" formControlName="product"></td>
+          <td><input type="text" formControlName="price"></td>
+          <td><input type="text" formControlName="currency"></td>
+          <td><input type="text" formControlName="amount"></td>
+          <td><input type="text" formControlName="purchaseDate"></td>
+          <td><button (click)="addRowForm()">+</button></td>
+        </tr>
+      </tbody>
+    </table>
   </section>
-  
-  <table>
-    <caption>Specific Dinamic Form</caption>
-    <thead>
-      <tr>
-        <th>Product</th>
-        <th>Price</th>
-        <th>Currency</th>
-        <th>Amount</th>
-        <th>Purchase Date</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let form of formList; let index = index" [formGroup]="form">
-      <tr>
-        <td><input type="text" formControlName="product"></td>
-        <td><input type="text" formControlName="price"></td>
-        <td><input type="text" formControlName="currency"></td>
-        <td><input type="text" formControlName="amount"></td>
-        <td><input type="text" formControlName="purchaseDate"></td>
-        <td><button (click)="addRowForm()">+</button></td>
-      </tr>
-    </tbody>
-  </table>
 </section>
