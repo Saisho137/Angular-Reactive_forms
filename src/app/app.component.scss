@@ -62,5 +62,30 @@
 }
 
 .table {
+    background-color: #dfdfff;
+    color: #461b93;
     margin-top: 20px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.button__generate {
+    height: 2em;
+    font-weight: bold;
+    font-size: 18px;
+    color: #461b93;
+    background-color: #dfdfff;
+    border: #D999FF 1.5px solid;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 5px;
+    &:hover {
+        cursor: pointer;
+    }
+    &:active {
+        transform: translateY(2px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 }

@@ -21,7 +21,12 @@ export class AppComponent {
     this.addRowForm();
   }
 
-  addRowForm():void {
+  setInitialDate(): string {
+    const today = new Date();
+    return today.toISOString().split('T')[0];
+  }
+
+  addRowForm(): void {
     const newForm = this.formBuilder.group({
       product: ['', Validators.required],
       price: ['', Validators.required],
@@ -32,8 +37,7 @@ export class AppComponent {
     this.formList.push(newForm);
   }
 
-  setInitialDate(): string {
-    const today = new Date();
-    return today.toISOString().split('T')[0];
+  submit(): void {
+    console.log('here');
   }
 }
