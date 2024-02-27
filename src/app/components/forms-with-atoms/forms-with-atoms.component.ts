@@ -40,8 +40,6 @@ export class FormsWithAtomsComponent implements OnInit {
   onChangeGeneralFields(value: string, field: string): void {
     const updatedValues: { [key: string]: string } = {};
     updatedValues[field] = value;
-    console.log('HERE');
-    
     this.generalInfoForm.patchValue(updatedValues);
   }
 
