@@ -51,6 +51,7 @@
       </tbody>
     </table>
     <button class="button__generate" (click)="submit()">Generate info</button>
+
     <h2>General Form Values</h2>
     <section class="print__generalForm" *ngIf="generalInfoForm">
       <div *ngIf="generalInfoForm.get('name')?.value">
@@ -68,6 +69,30 @@
       <div *ngIf="generalInfoForm.get('age')?.value">
         <h3>Age:</h3>
         <p>{{generalInfoForm.get('age')?.value}}</p>
+      </div>
+    </section>
+
+    <h2>Dinamic Forms Values</h2>
+    <section class="print__dinamicForm" *ngFor="let form of formList; let i = index">
+      <div *ngIf="formList[i].get('product')?.value">
+        <h3>Product:</h3>
+        <p>{{formList[i].get('product')?.value}}</p>
+      </div>
+      <div *ngIf="formList[i].get('price')?.value">
+        <h3>Price:</h3>
+        <p>{{formList[i].get('price')?.value}}</p>
+      </div>
+      <div *ngIf="formList[i].get('currency')?.value">
+        <h3>Currency:</h3>
+        <p>{{formList[i].get('currency')?.value}}</p>
+      </div>
+      <div *ngIf="formList[i].get('amount')?.value">
+        <h3>Amount:</h3>
+        <p>{{formList[i].get('amount')?.value}}</p>
+      </div>
+      <div *ngIf="formList[i].get('purchaseDate')?.value">
+        <h3>Purchase Date:</h3>
+        <p>{{formList[i].get('purchaseDate')?.value}}</p>
       </div>
     </section>
   </section>
